@@ -1,10 +1,12 @@
-<?php 
+<?php
+$conn = mysqli_connect('localhost', 'root', '', 'win');
+
 
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $email = $_POST['email'];
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
   echo $firstName . ' / ' . $lastName . ' / ' . $email;
 }
 
