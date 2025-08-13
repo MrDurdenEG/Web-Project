@@ -1,15 +1,16 @@
 <?php
-$conn = mysqli_connect('localhost', 'root', '', 'win');
+include './inc/db.php';
+include './inc/form.php';
 
+$sql_ = 'SELECT * FROM `users` ORDER BY `id` ASC';
+$result = mysqli_query($conn, $sql_);
+$users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-$firstName = $_POST['firstName'];
-$lastName = $_POST['lastName'];
-$email = $_POST['email'];
-
-if (isset($_POST['submit'])) {
-  echo $firstName . ' / ' . $lastName . ' / ' . $email;
-}
-
+echo '<pre>';
+print_r($users);
+echo '</pre>';
+mysqli_free_result($result);
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
