@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
 
   if (!array_filter($errors)) {
     if (mysqli_query($conn, $sql)) {
-      header('location : '. $_SERVER['PHP_SELF'] );
+      header('location : ' . $_SERVER['PHP_SELF']);
     } else {
       echo 'fail';
     }
